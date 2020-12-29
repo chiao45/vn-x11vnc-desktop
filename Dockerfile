@@ -20,6 +20,7 @@ ADD image/bin /usr/local/bin
 RUN sh -c "curl -s http://dl.openfoam.org/gpg.key | apt-key add -" && \
     add-apt-repository http://dl.openfoam.org/ubuntu && \
     add-apt-repository ppa:freecad-maintainers/freecad-stable && \
+    add-apt-repository ppa:fenics-packages/fenics && \
     apt update && \
     apt upgrade -y && \
     apt install -y --no-install-recommends \
@@ -30,6 +31,7 @@ RUN sh -c "curl -s http://dl.openfoam.org/gpg.key | apt-key add -" && \
       feh \
       pinta \
       diffuse \
+      fenics \
       && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     mv $DOCKER_HOME/.config/lxsession/LXDE/autostart $DOCKER_HOME/.config/lxsession/LXDE/autostart.bak && \
