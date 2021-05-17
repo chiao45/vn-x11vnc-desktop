@@ -33,6 +33,9 @@ RUN sh -c "curl -s http://dl.openfoam.org/gpg.key | apt-key add -" && \
       diffuse \
       fenics \
       && \
+    cd /tmp && \
+    wget https://github.com/FreeFem/FreeFem-sources/releases/download/v4.9/FreeFEM_4.9_Ubuntu_withPETSc_amd64.deb && \
+    apt install -y /tmp/FreeFEM_4.9_Ubuntu_withPETSc_amd64.deb && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     mv $DOCKER_HOME/.config/lxsession/LXDE/autostart $DOCKER_HOME/.config/lxsession/LXDE/autostart.bak && \
     head -n -1 $DOCKER_HOME/.config/lxsession/LXDE/autostart.bak > $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
