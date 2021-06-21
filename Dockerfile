@@ -32,6 +32,21 @@ RUN sh -c "curl -s http://dl.openfoam.org/gpg.key | apt-key add -" && \
       pinta \
       diffuse \
       fenics \
+      libtool \
+      python3-requests \
+      build-essential \
+      autoconf \
+      automake \
+      bison \
+      flex \
+      cmake \
+      gfortran \
+      git \
+      python3-dev \
+      python3-tk \
+      python3-venv \
+      zlib1g-dev \
+      libboost-dev \
       && \
     cd /tmp && \
     wget https://github.com/FreeFem/FreeFem-sources/releases/download/v4.9/FreeFEM_4.9_Ubuntu_withPETSc_amd64.deb && \
